@@ -1,0 +1,28 @@
+{
+  "name": "my-qwik-basic-starter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "qwik check-client src dist && vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "deploy": "wrangler deploy",
+    "predeploy": "npm run build",
+    "fmt": "prettier --write .",
+    "dev": "vite --mode ssr --open",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "latest",
+    "@builder.io/qwik-city": "latest",
+    "@tailwindcss/typography": "latest",
+    "@tailwindcss/vite": "latest",
+    "daisyui": "latest",
+    "tailwindcss": "latest",
+    "undici": "latest",
+    "vite": "latest",
+    "wrangler": "latest"
+  }
+}
